@@ -8,6 +8,7 @@ __pycache__/
 
 # Dataset
 data/US_Accidents_March23.csv
+data/US_Accidents_March23_sampled_500k.csv
 
 # Distribution / packaging
 .Python
