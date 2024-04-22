@@ -1,20 +1,12 @@
 import pandas as pd
+from numpy.typing import NDArray
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-def read_data(full_data: bool = False, balanced: bool = False) -> pd.DataFrame:
-    if full_data:
-        df = pd.read_csv('../data/US_Accidents_March23.csv')
-        if balanced:
-            min_samples = df['Severity'].value_counts().min()
-            balanced_data = pd.DataFrame()
+def get_metrics(y_pred : NDArray, y_test: pd.core.series.Series) -> pd.DataFrame:
+    accuracy = accuracy_score(y_test,y_pred)
+    recall = recall_score(y_test,y_pred, average='weighted')
+    precision = precision_score(y_test,y_pred, average='weighted')
+    f1_score_w = f1_score(y_test,y_pred, average='weighted')
+    return [accuracy, recall, precision, f1_score_w]
 
-            for severity_type in df['Severity'].unique():
-                sampled_data = df[df['Severity'] == severity_type].sample(min_samples, replace=False)
-                balanced_data = pd.concat([balanced_data, sampled_data])
-
-            balanced_data = balanced_data.sample(frac=1).reset_index(drop=True)
-
-            return balanced_data
-        return df
-        
-    return pd.read_csv('../data/US_Accidents_March23_sampled_500k.csv') 
 
