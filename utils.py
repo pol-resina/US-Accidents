@@ -8,5 +8,3 @@ def get_metrics(y_pred : NDArray, y_test: pd.core.series.Series) -> pd.DataFrame
     precision = precision_score(y_test,y_pred, average='weighted')
     f1_score_w = f1_score(y_test,y_pred, average='weighted')
     return [accuracy, recall, precision, f1_score_w]
-
-
