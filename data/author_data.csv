@@ -1,0 +1,2 @@
+,Start_Lat,Start_Lng,Distance(mi),Temperature(F),Humidity(%),Pressure(in),Amenity,Crossing,Give_Way,Junction,No_Exit,Railway,Roundabout,Station,Stop,Traffic_Calming,Traffic_Signal,Time_Difference,Year,Month,Day,Hour,Weekday
+0,34.051211,-118.243481,7.103471329263958e-18,1.9937762523199807e-17,3.3012267723439265e-17,-5.9710338709755016e-18,False,True,False,False,False,False,False,False,True,False,False,3.294363515020966e-17,2019,6,12,10,2
